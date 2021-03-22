@@ -33,6 +33,8 @@ def registration():  # register user
             f.close()
             if reg_user.get() in read:
                 messagebox.showinfo("Oops", "Username already registered!")
+            elif reg_password1.get() != reg_password2.get():
+                messagebox.showinfo("Error", "Passwords doesn't match!")
             else:
                 login_pass_save = {reg_user.get(): reg_password1.get()}
                 f = open("login.txt", "wb")
